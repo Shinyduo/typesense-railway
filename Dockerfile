@@ -5,7 +5,7 @@ FROM caddy:latest AS caddy
 COPY Caddyfile ./
 RUN caddy fmt --overwrite Caddyfile
 
-FROM typesense/typesense:latest
+FROM typesense/typesense:30.0.rc8
 
 COPY --from=caddy /srv/Caddyfile ./
 
